@@ -2,7 +2,7 @@ var userName = 'Víctor';
 var age = 37;
 var hasHobbies = true;
 
-function summarizeUser(name, age, hasHobbies) {
+const summarizeUser = (name, age, hasHobbies) => {
     return (
         ' Name: ' + name + 
         ' Age: ' + age + 
@@ -10,4 +10,7 @@ function summarizeUser(name, age, hasHobbies) {
     );
 }
 
+const sum = (a, b) => a + b;
+
 console.log(summarizeUser(userName, age, hasHobbies));
+console.log('Result: ' + sum(2,5));
