@@ -1,16 +1,10 @@
-var userName = 'Víctor';
-var age = 37;
-var hasHobbies = true;
 
-const summarizeUser = (name, age, hasHobbies) => {
-    return (
-        ' Name: ' + name + 
-        ' Age: ' + age + 
-        ' User has hobbies: ' + hasHobbies
-    );
+const person = {
+    name: 'Victor',
+    age: 37,
+    greet() {
+        console.log('My name is ' + this.name + ' and am ' + this.age + ' old');
+    }
 }
 
-const sum = (a, b) => a + b;
-
-console.log(summarizeUser(userName, age, hasHobbies));
-console.log('Result: ' + sum(2,5));
+person.greet();
