@@ -8,3 +8,9 @@ const person = {
 }
 
 person.greet();
+
+const skills = ['Communication', 'Team work', 'Ideas', 'Emotional Intelligence'];
+
+const softSkills = skills.map(skill => 'Skill: ' + skill);
+
+console.log(softSkills);
