@@ -1,40 +1,20 @@
-const person = {
-    name: 'Victor',
-    age: 37,
-    greet() {
-        console.log('My name is ' + this.name + ' and am ' + this.age + ' old');
-    }
+
+const fetchData = () => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Finished after 1.5s');
+        }, 1500);
+    });
+    return promise;
 }
 
-const skills = ['Communication', 'Team work', 'Ideas', 'Emotional Intelligence'];
+setTimeout(() => {
+    console.log('Done after 2s!')
 
-/*
-person.greet();
-
-const softSkills = skills.map(skill => 'Skill: ' + skill);
-
-console.log(softSkills);*/
-
-/*
-// Spread operator
-console.log({...person});
-console.log([...skills]);
-
-const getProperties = (...args) => console.log('Arguments: ', args) 
-
-// Rest operator
-getProperties(1, true, 'active', 'user1');
-*/
-
-const printPerson = ({name}) => {
-    console.log('My name: ' + name);
-}
-
-printPerson(person);
-
-const {name, age} = person;
-console.log(name, age);
-
-const [skill1, skill2] = skills;
-
-console.log(skill1, skill2);
+    fetchData().then(text => {
+        console.log(text)
+        return fetchData();
+    }).then(text2 => {
+        console.log(text2);
+    })
+}, 2000);
